@@ -1,38 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CharacterCard from './CharacterCard'
+import CharacterCard from "./CharacterCard";
 
+export default function CharacterPage() {
+  const [characters, setCharacters] = useState([]);
 
-const CharacterPage = (props) => {
-  const [character, setCharacter] = useState([])
+  useEffect(() => {
+    axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then((response) => {
+        console.log(response.data);
+        setCharacters(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-  axios
-    .get("https://rickandmortyapi.com/api/character/")
-    .then((response) => {
-      console.log(response.data);
-      console.log(CharacterData);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-   
-  
-  
-  console.log(props);
-  console.log(props.data)
   return (
     <div className="character-container">
-      {((element) => {
-        return <CharacterCard character={character} setCharacter={setCharacter}/>
+      {characters.map(character => {
+        return (
+          <CharacterCard
+            id={character.id}
+            name={character.name}
+            
+          />
+        );
       })}
-    <div>
-      
-    </div>
-
-      
-      
+      <div></div>
     </div>
   );
 };
 
-export default CharacterPage;
+
