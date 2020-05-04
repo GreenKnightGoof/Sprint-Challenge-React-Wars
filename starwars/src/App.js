@@ -5,7 +5,7 @@ import Character from "./components/Character.js";
 
 const App = () => {
   axios
-    .get("https://rickandmortyapi.com/api")
+    .get("https://rickandmortyapi.com/api/character/")
     .then((response) => {
       console.log(response.data);
     })
@@ -15,8 +15,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Character />
+      <h1 className="Header">Characters From Rick and Morty!</h1>
+      <Character  />
     </div>
   );
 };
