@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import "./App.css";
 import Character from "./components/Character.js";
 
 const App = () => {
-  const [data, setData] = useState([]);
   axios
-    .get("https://rickandmortyapi.com/api/")
+    .get("https://rickandmortyapi.com/api")
     .then((response) => {
       console.log(response.data);
-      setData(response.data);
     })
     .catch((error) => {
       console.log(error);
