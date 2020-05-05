@@ -20,12 +20,14 @@ export default function CharacterPage() {
   return (
     <div className="character-container">
       {characters.map((character) => {
-        return( <CharacterCard 
-        id={character.id} 
-        name={character.name}
-        image={character.image}
-        species={character.species}
-         />);
+        return (
+          <CharacterCard
+            id={character.id}
+            name={character.name}
+            image={character.image}
+            species={character.species}
+          />
+        );
       })}
       <div></div>
     </div>

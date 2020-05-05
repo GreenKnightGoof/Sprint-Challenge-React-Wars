@@ -3,12 +3,10 @@ import "./App.css";
 import CharacterPage from "./components/CharacterPage.js";
 
 const App = () => {
-  
-    
   return (
     <div className="App">
       <h1 className="Header">Characters From Rick and Morty!</h1>
-      <CharacterPage  />
+      <CharacterPage />
     </div>
   );
 };
