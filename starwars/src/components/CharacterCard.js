@@ -1,6 +1,7 @@
 import React from "react";
 import { Badge } from 'reactstrap';
 import { Button } from 'reactstrap';
+import './CharacterCard.css'
 
 const CharacterCard = (props) => {
   return (
