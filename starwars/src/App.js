@@ -1,19 +1,21 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CharacterPage from "./components/CharacterPage.js";
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
-
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
-
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Characters From Rick and Morty!</h1>
+      <CharacterPage />
     </div>
   );
-}
+};
 
 export default App;
+
+// Try to think through what state you'll need for this app before starting. Then build out
+// the state properties here.
+
+// Fetch characters from the API in an effect hook. Remember, anytime you have a
+// side effect in a component, you want to think about which state and/or props it should
+// sync up with, if any.
