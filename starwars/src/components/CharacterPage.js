@@ -9,8 +9,8 @@ export default function CharacterPage() {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then((response) => {
-        console.log(response.data);
-        setCharacters(response.data);
+        console.log(response.data.results);
+        setCharacters(response.data.results);
       })
       .catch((error) => {
         console.log(error);
@@ -19,18 +19,15 @@ export default function CharacterPage() {
 
   return (
     <div className="character-container">
-      {characters.map(character => {
-        return (
-          <CharacterCard
-            id={character.id}
-            name={character.name}
-            
-          />
-        );
+      {characters.map((character) => {
+        return( <CharacterCard 
+        id={character.id} 
+        name={character.name}
+        image={character.image}
+        species={character.species}
+         />);
       })}
       <div></div>
     </div>
   );
-};
-
-
+}
